@@ -1,0 +1,356 @@
+ASSIGNMENT 
+
+1. Given an array count the occurrence of an element in that array, if it is not
+present return -1
+Input : 1,2,2,3,2,3,3,7 | count: 2
+Output : 3
+
+program:
+
+#include<stdio.h>
+void array();
+void main()
+{
+array();
+}
+void array()
+{
+	int a[10]={1,2,2,3,2,3,3,7};
+	int count=0,i,n;
+	prinyf("enter n");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==n)
+		{
+			count++;
+		}
+		if(c>=1)
+		{
+			printf("%d",count);
+		}
+		else
+			printf("-1");
+	}
+}
+
+
+2. Given an array count the occurrence of all element in that array, if array is
+empty return -1
+Input : 1,2,2,3,2,3,3,7
+Output : 1-1, 2-3, 3-3, 7-1
+
+program:
+
+#include<stdio.h>
+void array();
+void main()
+	{
+		array()
+	}
+void array()
+{
+int a[8]={ 1,2,2,3,2,3,3,7};
+int count=0,i,j,t,flag;
+	for(i=0;i<8;i++)
+	{
+		flag=0;
+	for(j=0;j<i;j++)
+	{
+	if(a[i]==a[j])
+	{
+		flag=1;
+		break;
+	}
+	}
+	if(flag==0)
+	for(j=0;j<8;j++)
+	{
+	if(a[i]==a[j])
+	{
+		count++
+	}
+	}
+	t=count;
+	count=0;
+	printf("%d-%d\n",a[i],t);
+	}
+}
+
+
+3.
+
+#include <stdio.h>
+
+#include<string.h>
+
+
+struct student
+
+{
+   
+int id;
+    
+char name[30];
+
+};
+
+
+int main()
+
+{   
+int i;
+  
+struct student record[1];
+ 
+record[0].id=1;
+    
+strcpy(record[0].name,"hima1");
+    
+record[1].id=2;
+    
+strcpy(record[1].name,"hima2");
+        
+{
+      
+printf("records of student : %d\n",i+1);
+   
+printf("id is:%d\n",record[i].id);
+       
+printf("name is:%s\n",record[i].name);
+ 
+}
+    
+
+   
+return 0;
+
+}
+
+
+
+4.
+#include<stdio.h>
+void fun(int n);
+void main()
+{
+int n;
+printf("enter n");
+scanf("%d",&n);
+fun(n);
+}
+void fun(int n)
+{
+    int rev=0;
+    while(n!=0)
+    {
+
+        rev=rev*10+n%10;
+        n=n/10;
+    }
+    printf("reverse numberr is %d\n",rev);
+    main();
+}
+
+
+5.
+#include<stdio.h>
+int check(char* str,char* sub);
+void main()
+{
+char str[100],sub[100],r[20];
+printf("enter string ");
+scanf("%s",str);
+printf("enter substring ");
+scanf("%s",sub);
+check(str,sub);
+}
+int check(char* str,char* sub)
+{
+  int i, j=0, k;
+  for(i=0; str[i]; i++)
+  {
+    if(str[i] == sub[j])
+    {
+      for(k=i, j=0; str[k] && sub[j]; j++, k++)
+        if(str[k]!=sub[j])
+            break;
+
+       if(!sub[j])
+        {
+        printf("Substring");
+        return 0;
+        }
+    }
+  }
+  printf("Not a substring");
+ return 0;
+ main();
+
+}
+
+
+
+7. Print Patterns-1
+Triangle, Inverted Triangle, Cross inside a Box
+Input : 3
+Output :
+ *
+* *
+* * *
+
+program:
+
+#include<stdio.h>
+void pattern();
+void main()
+{
+pattern();
+}
+void pattern()
+{
+int i,j,space=2,n=3;
+for(i=1;i<=n;i++)
+{
+for(j=1;j<=space;j++)
+{
+printf("  ");
+}
+for(j=1;j<=i;j++)
+{
+printf("* ");
+}
+printf("\n");
+spacde--;
+}
+}
+
+
+Print Patterns-2
+Triangle, Inverted Triangle, Cross inside a Box
+Input : 3
+Output :
+* * *
+* *
+ *
+
+program:
+
+#include<stdio.h>
+void pattern();
+void main()
+{
+pattern();
+}
+void pattern()
+{
+int i,j,space=2,n=3;
+for(i=n;i>=1;i--)
+{
+for(j=space;j>=1;j--)
+{
+printf("  ");
+}
+for(j=1;j<=i;j++)
+{
+printf("* ");
+}
+printf("\n");
+spacde++;
+}
+}
+
+Print Patterns-3
+Input : 5
+Output 
+* * * * *
+* *     * *
+*    *     *
+* *     * *
+* * * * *
+
+program:
+#include<stdio.h>
+void pattern();
+void main()
+{
+pattern();
+}
+void pattern()
+{
+int i,j,n=5;
+for(i=1;i<=n;i++)
+{
+for(j=1;j<=n;j++)
+{
+if(i==1 || j==1 || i==n || j==n || i==j || j=n-i+1)
+{
+printf("* ");
+}
+else
+printf(" ");
+}
+printf("\n");
+}
+}
+
+
+8.
+#include<stdio.h>
+void fun(int* arr,int n,int k);
+void main()
+{
+    int i,k,m;
+int arr[100],n;
+printf("enter n");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+scanf("%d",&arr[i]);
+printf("enter  kth max ");
+scanf("%d",&k);
+fun(arr,n,k);
+m=k-1;
+printf("%d",arr[m]);
+}
+void fun(int* arr,int n,int k)
+{
+int i,j,c,f;
+for(i=0;i<n-1;i++)
+{
+    f=0;
+    for(j=0;j<n-1-i;j++)
+    {
+if(arr[j]>arr[j+1])
+{
+c=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=c;
+f=1;
+}
+}
+if(f==0)
+    break;
+}
+
+}
+
+
+9.
+#include<stdio.h>
+void num_table(int n);
+void main()
+{
+    int n;
+    printf("enter n ");
+    scanf("%d",&n);
+    num_table(n);
+
+}
+void num_table(int n)
+{
+    int i;
+    for(i=1;i<=10;i++)
+        printf("%d * %d = %d \n",n,i,n*i);
+
+}
+
